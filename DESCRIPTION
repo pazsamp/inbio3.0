@@ -1,0 +1,12 @@
+Package: inbio
+Title: Calculo de parametros biologicos y sus incertidumbres mediante
+        tecnicas de simulacion
+Version: 2.0
+Date: 2013-02-15
+Author: Paz Sampedro
+Maintainer: Paz Sampedro <paz.sampedro@co.ieo.es>
+Encoding: latin1
+Depends: R (>= 2.15.2), boot
+Description: Calcula los parámetros de crecimiento en talla y peso ajustando la ecuación de von Bertalanffy, la talla y la edad de madurez sexual ajustando una regresión logística, la relación talla-peso mediante un ajuste no linear por mínimos cuadrados y el porcentaje de hembras por talla y por edad.De todos estos parámetros se calcula su coeficiente de variación mediante bootstrap no paramétrico.
+License: Unlimited
+Built: R 3.4.3; ; 2017-12-13 14:56:32 UTC; windows
