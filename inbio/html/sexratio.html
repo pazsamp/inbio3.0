@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sexratio por Talla y Edad</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sexratio {inbio}"><tr><td>sexratio {inbio}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sexratio por Talla y Edad</h2>
+
+<h3>Description</h3>
+
+<p>Calcula el porcentaje de hembras por talla y por edad, y su coeficiente de variacion mediante bootstrap no parametrico.
+** Sexratio= (hembras/(hembras+machos)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sexratio(especie = "nombre especie", cl = 1, unid = "cm", edad = T, n = 1000)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>especie</code></td>
+<td>
+<p>Nombre del archivo donde estan los datos de entrada, sin la extension y sin el directorio.</p>
+</td></tr>
+<tr valign="top"><td><code>cl</code></td>
+<td>
+<p>Intervalo de talla usado en la sexratio por talla. El valor por defecto es 1.</p>
+</td></tr>
+<tr valign="top"><td><code>unid</code></td>
+<td>
+<p>Unidad de los datos de talla: cm o mm. Por defecto unid=&quot;cm&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>edad</code></td>
+<td>
+<p>Si edad=T la rutina calcula el sexratio por edad; Si edad=F la rutina no calcula sexratio por edad. Por defecto edad = T.</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>Numero de replicas bootstrap. El numero recomendado es 1000.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Archivo &quot;txt&quot; con los resultados de sexratio por talla y su coeficiente de variacion global y los resultados para sexratio por edad y coeficiente de variacion global.
+</p>
+<p>Archivo &quot;pdf&quot; con dos graficas, una grafica del sexratio y coeficiente de variacion por talla y otra del sexratio y coeficiente de variacion por edad.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Paz Sampedro</p>
+
+
+<h3>References</h3>
+
+<p>Efron, B. 1979. Bootstrap methods: another look at the jackknife. Annals of Statistics, 7. 1-26 p.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Requiere que exista el archivo "merluza.csv" en el directorio de trabajo
+# Calcula el sexratio por talla y el sexratio por edad
+#  sexratio(especie="merluza", edad=T)
+
+# Requiere que exista el archivo "cigala.csv" en el directorio de trabajo
+# Calcula el sexratio por talla
+#  sexratio(especie="cigala", edad=F)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>inbio</em> version 3.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

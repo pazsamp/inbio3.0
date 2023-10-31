@@ -1,0 +1,14 @@
+Package: inbio
+Type: Package
+Title: Incertidumbre Biologicos(INBIO)
+Version: 3.0.0
+Author: Paz Sampedro
+Maintainer: The package maintainer <paz.sampedro@ieo.es>
+Description: Calculation of biological parameters: growth in length and in weight fitting von Bertalanffy growth equation. Maturity at length and at age fitting a logistic regression. Length-Weight relationship calculated by nonlinear least squares.Sexratio by length and by age.
+Dependecies: boot, stats
+Imports: boot, stats
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Built: R 4.0.2; ; 2021-08-30 14:04:55 UTC; windows

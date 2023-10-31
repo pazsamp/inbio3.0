@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Relacion Talla-Peso</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for peso {inbio}"><tr><td>peso {inbio}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Relacion Talla-Peso</h2>
+
+<h3>Description</h3>
+
+<p>Calcula la relacion talla-peso por estimaci?n no linear y ajuste de m?nimos cuadrados.
+Mediante bootstrap no parametrico estima el coeficiente de variacion de los parametros de la relaci?n talla-peso.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+peso(especie = "nombre especie", cl = 1, unid = "cm", sex = F, a = 5e-04, b = 3, n = 1000)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>especie</code></td>
+<td>
+<p>Nombre del archivo donde estan los datos de entrada, sin la extension y sin el directorio.</p>
+</td></tr>
+<tr valign="top"><td><code>cl</code></td>
+<td>
+<p>Intervalo de talla. El valor por defecto es 1.</p>
+</td></tr>
+<tr valign="top"><td><code>unid</code></td>
+<td>
+<p>Unidad de los datos de talla: cm o mm. Por defecto unid=&quot;cm&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>sex</code></td>
+<td>
+<p>Si sex=F el proceso analiza los datos de machos y hembras conjuntamente. Si sex=T el proceso analiza separadamente machos y hembras. Por defecto sex=F.</p>
+</td></tr>
+<tr valign="top"><td><code>a</code></td>
+<td>
+<p>Valor de partida (&quot;start value&quot; o &quot;semilla&quot;) de la ordenada.</p>
+</td></tr>
+<tr valign="top"><td><code>b</code></td>
+<td>
+<p>Valor de partida (&quot;start value&quot; o &quot;semilla&quot;) de la pendiente.</p>
+</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+<p>Numero de replicas bootstrap. El numero recomendado es 1000.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Es importante que los valores de partida (&quot;start value&quot; o &quot;semilla&quot;) no sean muy diferentes de los que se quiere calcular (se pueden consultar valores de otros anhos o zonas), si no, el proceso
+iterativo por el que se realiza el ajuste podria fallar.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Archivo &quot;txt&quot; con los resultados de los datos originales y de las replicas bootstrap, asi como su coeficiente de variacion.
+</p>
+<p>Archivo &quot;pdf&quot; con las graficas del ajuste para los datos originales y para las replicas bootstrap, graficas del analisis de residuos del ajuste de los datos originales y graficas de analisis de las replicas bootstrap.
+</p>
+<p>Si el proceso se realiza separadamente para machos y hembras, los archivos de salida tambien son independientes.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Paz Sampedro</p>
+
+
+<h3>References</h3>
+
+<p>Efron, B. 1979. Bootstrap methods: another look at the jackknife. Annals of Statistics, 7. 1-26 p.</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Requiere que exista el archivo "merluza.csv" en el directorio de trabajo
+## Calcula la relacion talla-peso separadamente para machos y hembras
+#   peso (especie="merluza", sex=T, a= 0.005, b=3)
+
+## Requiere que exista el archivo "choco.csv" en el directorio de trabajo
+## Calcula la relacion talla-peso para una especie con intervalo de talla de 0.5 cm, separadamente por sexos
+#   peso(especie="choco", cl=0.5, sex=T, a=0.05, b=2.4)
+ </pre>
+
+<hr /><div style="text-align: center;">[Package <em>inbio</em> version 3.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
